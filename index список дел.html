@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список дел</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+    .strikeout {
+        text-decoration: line-through; 
+    }
+    .priority {
+    color: orange;
+    font-size: 20px;
+    }
+    </style>
+</head>
+<body>
+<div id="doing-list">
+    <div>
+        <h1>{{"Список дел"}}</h1>
+        <button v-if="editing" @click="doEdit(false)" class="btn btn-cancel">Назад</button>
+        <button v-else @click="doEdit(true)" class="btn btn-primary">Добавьте дело</button>
+    </div>
+    <form v-if="editing" class="add-item-form"
+        @submit.prevent="saveItem">
+        <input  v-model="newItem" type="text" placeholder="Добавьте дело">
+    <label>
+        <input type="checkbox" v-model="newItemHighPriority">Высокий приоритет
+    </label>
+    <button :disabled="newItem.length === 0" class="btn btn-primary">
+    Сохранить
+    </button>
+    </form>
+    <p v-if="items.length === 0">Дел пока нет! Отдыхай!</p>
+    <ul>
+        <li v-for="item in items" @click="togglePurchased(item)" :key="item.id"
+            :class="{strikeout: item.purchased, priority: item.highPriority}"
+            class="static-class"
+        >{{item.label}}</li>
+    </ul>
+</div>
+<script src="https://unpkg.com/vue@3"></script>
+<script>
+    const doingListApp = Vue.createApp({
+        data() {
+            return {
+                header: "Список дел",
+                editing: false,
+                newItem: "",
+                newItemHighPriority: false,
+                items: [
+                    {id: 1, label: "Проснуться", purchased: true, highPriority: true},
+                    {id: 2, label: "Переодеться", purchased: true, highPriority: false},
+                    {id: 3, label: "Позавтракать", purchased: false, highPriority: true},
+                ]
+            }
+        },
+        methods: {
+            saveItem(){
+                this.items.push({id: this.items.length + 1, 
+                    label: this.newItem,
+                    highPriority: this.newItemHighPriority
+                })
+                this.newItem = ""
+                this.newItemHighPriority = ""
+            },
+            doEdit(editing) {
+                this.editing = editing
+                this.newItem = ""
+                this.newItemHighPriority = ""
+            },
+            togglePurchased(item) {
+                item.purchased = !item.purchased
+            }
+        }
+    })
+    .mount("#doing-list")
+</script>
+</body>
+</html>
