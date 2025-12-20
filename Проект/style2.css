@@ -1,0 +1,456 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: montserratAlt;
+  font-weight: 600;
+  src: url("fonts/ofont.ru_Montserrat Alternates.ttf");
+}
+
+@font-face {
+  font-family: montserrat;
+  font-weight: 600;
+  src: url("fonts/Montserrat-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: montserrat;
+  font-weight: 500;
+  src: url("fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: montserrat;
+  font-weight: normal;
+  src: url("fonts/Montserrat-Regular.ttf");
+}
+
+button {
+  font-family: inherit;
+}
+
+h2 {
+  font-family: "montserrat";
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h3 {
+  font-family: "montserrat";
+  font-size: 16px;
+  font-weight: 600;
+}
+
+b {
+  font-family: "montserrat";
+  font-size: 14px;
+  font-weight: 600;
+}
+
+body {
+  margin: 0;
+  font-family: "montserrat", Inter, Arial, sans-serif;
+  background: white;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: #70232F;
+  padding-left: 32px;
+  padding-right: 16px;
+  padding-top: 5px;
+  color: white;
+  border-radius: 15px;
+  height: 100px;
+  font-family: "montserratAlt";               
+  font-weight: 600;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 32px;
+  font-weight: 600;
+  margin-left: 16px;
+}
+
+/* ===== MAIN ===== */
+.main {
+  padding: 24px;
+  position: relative;
+  top: 15px;
+  border-radius: 15px;
+  background-color: #EFEFEF;
+  }
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.tabs button {
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.tabs .active {
+  width: 121px;
+  height: 40px;
+  background: white;
+  border-radius: 5px;
+  padding-left: 35px;
+  font-weight: normal;
+  font-size: 16px;
+
+  background-image: url("images/arrow.svg");
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position: 20px center;
+}
+
+.tabs .active1 {
+  background: white;
+  width: 141px;
+  height: 40px;
+  border-radius: 5px;
+  padding-right: 40px;
+  font-weight: normal;
+  font-size: 16px;
+
+  background-image: url("images/Map.svg");
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: right 18px center;
+}
+
+.content {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.content h2 {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+/* ===== CARD ===== */
+.card {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  border-top: 2px solid #7a1f2b;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  background-color: white;
+  /*
+  width: 1030px;
+  */
+  position: relative;
+}
+
+.card-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  gap: 10px;
+
+  background-image: url("images/sport.png");
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: right 18px center;
+}
+
+.card-info {
+  flex: 1;
+  margin-left: 10Spx;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card-info2 {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.group, .plan {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.plan {
+    margin-left: 100px;
+}
+
+.card-info2 p {
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0;
+}
+
+
+.card-info2 h3 {
+  margin: 0;
+  color: #70232F;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.card-info h3 {
+  margin: 0 0 6px;
+  color: #70232F;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.badges {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.notpay {
+  height: 25px;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  background-color: #D86B79;
+  border-radius: 5px;
+  padding: 5px 15px;
+  gap: 10px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.firstfree{
+  width: 120px;
+  height: 25px;
+  color: #2F050F;
+  font-weight: 600;
+  font-size: 12px;
+  background-color: white;
+  border: 1px solid #D86B79;
+  border-radius: 5px;
+  padding: 5px 13.5px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.dataout {
+  flex: 1;
+  display: inline-block;
+}
+
+.data {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333333;
+  font-weight: normal;
+  height: 100%;
+}
+
+.years {
+  background-image: url("images/men.svg");
+  background-repeat: no-repeat;
+  background-size: 18px;
+  padding-left: 30px;
+}
+
+.city {
+  background-image: url("images/city.svg");
+  background-repeat: no-repeat;
+  background-size: 18px;
+  padding-left: 30px;
+}
+
+.house {
+  background-image: url("images/Map.svg");
+  background-repeat: no-repeat;
+  background-size: 13px;
+  padding-left: 30px;
+  color: #333333;
+  text-decoration: none;
+}
+
+.days {
+  display: flex;
+  color: #333333;
+  align-items: center;
+  justify-content: left;
+}
+
+.days-text, .days-text1 {
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  margin-right: 10px;
+
+  background-image: url("images/clock.svg");
+  background-repeat: no-repeat;
+  background-size: 18px;
+  padding-left: 30px;
+}
+
+.days-text1 {
+    padding-left: 50px;
+}
+
+.text {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.name {
+  background-image: url("images/hat.svg");
+  background-repeat: no-repeat;
+  background-size: 18px;
+  padding-left: 30px;  
+}
+
+.kol-vo {
+  background-image: url("images/people.svg");
+  background-repeat: no-repeat;
+  background-size: 18px;
+  padding-left: 30px;  
+}
+
+.month {
+  background-image: url("images/time.svg");
+  background-repeat: no-repeat;
+  background-size: 18px;
+  padding-left: 30px;  
+}
+
+/* ===== SCHEDULE ===== */
+.schedule{
+  display: flex;
+  gap: 6px;
+  white-space: wrap;
+}
+.schedule span {
+  display: block;
+  width: 137px;
+  height: 28px;
+  background: #F7DAAB;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: normal;
+
+  line-height: 28px;
+  text-align: justify;
+  text-align-last: justify;
+
+  padding: 0 20px;
+}
+
+/* ===== BUTTON ===== */
+.button {
+  position:absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #70232F;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  gap: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  align-self: self-end;
+  margin-top: 30px;
+}
+
+/* ===== FILTERS ===== */
+.filters h3{
+  color: #70232F;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 0;
+}
+.filters h4 {
+  color: #70232F;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.filters {
+  border-radius: 12px;
+  border-top: 2px solid #7a1f2b;
+  border-radius: 5px;
+  background-color: white;  
+  padding: 20px;
+}
+
+.category {
+  margin-bottom: 24px;
+}
+
+.category-title {
+  cursor: pointer;
+  list-style: none; /* убираем стандартный маркер */
+  display: flex;
+  align-items: center;
+}
+
+/* убираем стандартную стрелку */
+.category-title::-webkit-details-marker {
+  display: none;
+}
+
+/* своя стрелка */
+.arrow {
+  margin-left: auto;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.2s;
+}
+ 
+/* поворот стрелки при открытии */
+details[open] > summary .arrow {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.category-content2 p {
+    padding: 0;
+    margin: 0;
+}
+
+.category-content2 ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 30px;
+  margin: 0;
+}
+
+.category-content2 {
+  margin-left: 10px;
+  font-weight: normal;
+  font-size: 14px;
+}
